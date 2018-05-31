@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="hibernate.SendMailPojo" table="sendmail">
+
+
+		<id name="mailid" type="int" column="mailid">
+			<generator class="increment" />
+		</id>
+
+		<property name="to" column="to" type="string" />
+
+		<property name="subject" column="subject" type="string" />
+		<property name="message" column="message" type="string" />
+		<property name="date" column="date" type="date" />
+	</class>
+
+
+</hibernate-mapping>

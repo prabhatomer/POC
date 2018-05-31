@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+<class name = "dump.Product" table = "PRODUCT">
+      
+      <meta attribute = "class-description">
+         This class contains the employee detail. 
+      </meta>
+      
+      <id name = "productId" type = "int" column = "pid">
+         <generator class="increment"/>
+      </id>
+      
+      <property name = "proName" column = "pname" type = "string"/>
+      
+      <property name = "price" column = "price" type = "double"/>
+      
+   </class>
+
+
+</hibernate-mapping>
