@@ -104,7 +104,7 @@ public class CheckingMails {
 		String host = "pop.gmail.com";// change accordingly
 		String mailStoreType = "pop3";
 		String username = "tom99911@gmail.com";// change accordingly
-		String password = "iam9838586161";// change accordingly
+		String password = "i";// change accordingly
 
 		return check(host, mailStoreType, username, password);
 

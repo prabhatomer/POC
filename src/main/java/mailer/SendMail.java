@@ -36,7 +36,7 @@ public class SendMail {
 	}
 
 	public String Send(String to, String sub, String msg) {
-		String result = SendMail.send("tom99911@gmail.com", "iam9838586161", to, sub, msg);
+		String result = SendMail.send("tom99911@gmail.com", "i", to, sub, msg);
 		return result;
 	}
 
