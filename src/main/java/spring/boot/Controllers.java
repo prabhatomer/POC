@@ -1,7 +1,9 @@
 package spring.boot;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,15 +13,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.websocket.server.PathParam;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 import mailer.CheckingMails;
 import mailer.*;
 import mailer.Mail;
 import com.dao.*;
 import com.model.*;
-import com.test.Test;
+//import com.test.Test;
+//import com.websystique.spring.model.Result;
 
 @RestController
 public class Controllers {
@@ -27,8 +33,8 @@ public class Controllers {
 	@Produces("application/json")
 	@RequestMapping("/")
 	public String index() {
-		Test t=new Test();
-		t.message();
+		//Test t=new Test();
+		//t.message();
 		return "Greetings from Spring Boot!";
 	}
 
@@ -75,5 +81,21 @@ public class Controllers {
 		return result;
 
 	}
+	@POST
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({"application/xml"})
+	@RequestMapping("/save")
+	public Person save(Person p) {
+		ResultPayload rs = new ResultPayload();
+		rs.setStatus("Hello");
+		System.out.println(p.toString());
+		return p; 
+	}
+	@PostMapping(path = "/save1", produces = {MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    public Person getUser(Person p) {
+       
+ 
+        return p;
+    }
 
 }
