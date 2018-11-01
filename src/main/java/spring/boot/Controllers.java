@@ -19,6 +19,7 @@ import mailer.*;
 import mailer.Mail;
 import com.dao.*;
 import com.model.*;
+import com.test.Test;
 
 @RestController
 public class Controllers {
@@ -26,6 +27,8 @@ public class Controllers {
 	@Produces("application/json")
 	@RequestMapping("/")
 	public String index() {
+		Test t=new Test();
+		t.message();
 		return "Greetings from Spring Boot!";
 	}
 
